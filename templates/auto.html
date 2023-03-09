@@ -1,0 +1,27 @@
+﻿<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Кращі автомобілі світу</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" href="{% static 'style/style1.css' %}">
+	</head>
+	<body>
+		<table width="100%" border="1">
+			<tr>
+				<td id='logo'>{{logo}}</td>
+				<td rowspan="2" valign='top'>
+					{% for i in foto %}
+						<img src="/static/images/{{i.foto}}" width="100%">
+					{% endfor %}
+				</td>
+			</tr>
+			<tr>
+				<td id="menu" valign='top'>
+					{% for i in menu %}
+						<a href='?n={{i.id}}'>{{i.name}} </a>
+					{% endfor %}
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

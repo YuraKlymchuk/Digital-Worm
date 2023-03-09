@@ -1,0 +1,23 @@
+body{
+	background: #000;
+	color: #fff;
+}
+#menu{
+	width:15%;
+}
+#logo{
+	font:24px impact;
+	letter-spacing: 3px;
+	padding:15px;
+	height:10px;
+}
+#menu a{
+	display:block;
+	text-decoration: none;
+	color: #aaa;
+	padding: 10px;
+	font:20px arial;
+}
+#menu a:hover{
+	color:#fff;
+}

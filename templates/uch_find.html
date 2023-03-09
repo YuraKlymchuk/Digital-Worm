@@ -1,0 +1,17 @@
+<h2>Введіть прізвище для пошуку:</h2>
+<form method="POST" action='/uch_find/'>
+	{% csrf_token %}
+	<label>Введіть прізвище</label>
+	<input type='text' name="fam" />
+	<input type='submit' value='Знайти'>
+</form>
+
+<h3>{{p}}</h3>
+{% if stud.count > 0 %}
+	<h2>{{text}}</h2>
+	<ol>
+		{% for i in stud|dictsort:"name" %}
+			<li>{{i.name}} {{i.lastname}} - {{i.post}}</li>
+		{% endfor %}
+	</ol>
+{% endif %}

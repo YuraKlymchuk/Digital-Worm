@@ -1,0 +1,7 @@
+<h1>{{text}}</h1>
+<ol>
+{% for i in stud|dictsort:"lastname" %}
+	<li>{{i.name}} {{i.lastname}} - {{i.post}}</li>
+{% endfor %}
+</ol>
+<h2>Кількість учнів = {{stud|length}}</h2>

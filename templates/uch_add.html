@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'style/style.css' %}">
+
+<h2>Додати користувача:</h2>
+<form method="POST" action='/uch_add/'>
+	{% csrf_token %}
+		<table>
+			<tr>
+				<td> Прізвище:</td>
+				<td> <input type='text' name="fam" /></td>
+			</tr>
+			<tr>
+				<td> Ім'я:</td>
+				<td> <input type='text' name="name" /></td>
+			</tr>
+			<tr>
+				<td> Посада:</td>
+				<td> <input type='text' name="pos" /></td>
+			</tr>
+		</table>
+		<input type='submit' value='Додати'>
+</form>
+
+<h3>{{p}}</h3>
+{% if stud.count > 0 %}
+	<h2>{{text}}</h2>
+	<ol>
+		{% for i in stud|dictsort:"lastname" %}
+			<li>{{i.name}} {{i.lastname}} - {{i.post}}</li>
+		{% endfor %}
+	</ol>
+{% endif %}
+<img src="{% static 'images/img1.jpg' %}" alt="Мій малюнок" >
